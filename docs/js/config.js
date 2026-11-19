@@ -1,6 +1,4 @@
-// Endereço do servidor (tablet). Deixe vazio se abrir a loja direto pelo servidor.
-// Exemplo: 'https://minha-loja.trycloudflare.com'
-// O script iniciar.sh atualiza esta linha sozinho quando o túnel muda de endereço.
+// Endereço do servidor (tablet). Atualizado automaticamente pelo iniciar.sh
 window.LOJA_CONFIG = {
-  API_URL: ''
+  API_URL: 'https://installed-geography-arctic-bands.trycloudflare.com'
 };
