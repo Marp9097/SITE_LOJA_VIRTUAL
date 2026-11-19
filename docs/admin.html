@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Painel Admin</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- Login -->
+  <div class="login" id="login" hidden>
+    <form class="login-box" id="loginForm">
+      <div class="brand" style="justify-content:center;margin-bottom:6px"><div class="dot"></div></div>
+      <h1>Painel da loja</h1>
+      <p>Entre com a senha de administrador</p>
+      <div class="field"><input class="input" type="password" name="password" placeholder="Senha" autofocus required></div>
+      <button class="btn block">Entrar</button>
+      <details style="margin-top:16px;font-size:13px;color:var(--muted)">
+        <summary style="cursor:pointer">Servidor: <span id="apiShow"></span></summary>
+        <div style="display:flex;gap:6px;margin-top:8px"><input class="input" id="apiInput" placeholder="https://..."><button type="button" class="btn ghost sm" id="apiSave">Salvar</button></div>
+      </details>
+    </form>
+  </div>
+
+  <!-- App -->
+  <div class="admin" id="admin" hidden>
+    <aside class="side">
+      <div class="side-brand" id="sideBrand"><div class="dot"></div><span>Admin</span></div>
+      <nav id="nav">
+        <a data-tab="dashboard"><i>📊</i><span>Painel</span></a>
+        <a data-tab="orders"><i>🧾</i><span>Pedidos</span><b class="nav-badge" id="pendBadge" hidden></b></a>
+        <a data-tab="products"><i>📦</i><span>Produtos</span></a>
+        <a data-tab="categories"><i>🗂️</i><span>Categorias</span></a>
+        <a data-tab="coupons"><i>🏷️</i><span>Cupons</span></a>
+        <a data-tab="appearance"><i>🎨</i><span>Aparência</span></a>
+        <a data-tab="payment"><i>💠</i><span>Pagamento</span></a>
+        <a data-tab="email"><i>✉️</i><span>Notificações</span></a>
+        <a data-tab="account"><i>🔐</i><span>Conta</span></a>
+      </nav>
+      <a class="btn ghost sm side-store" href="./" target="_blank">Ver loja ↗</a>
+    </aside>
+    <main class="content" id="content"></main>
+  </div>
+
+  <div class="modal" id="modal"><div class="modal-box" id="modalBox"></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
